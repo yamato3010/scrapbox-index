@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap:https://fast-castle-61290.herokuapp.com/sitemap.xml
