@@ -22,6 +22,8 @@ app.get("/scrapbox/:title", (req, res) => {
     res.redirect(301, `https://scrapbox.io/yamato3010/${encodeURIComponent(title)}`);
 });
 
+app.use(express.static('public'));
+
 app.listen(PORT=process.env.PORT || 3000, function () {
     console.log("Node app is running at localhost:" + app.get('port'))
 });
