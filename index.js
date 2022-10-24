@@ -3,16 +3,7 @@ var app = express();
 let fs = require('fs');
 var client = require('cheerio-httpcli');
 var RSS = "https://scrapbox.io/api/feed/yamato3010";
-var https = require('https');
-var options = {
-    key:  fs.readFileSync('../lets_encript.key'),
-    cert: fs.readFileSync('../lets_encript_fullchain.crt')
-};
-var server = https.createServer(options,app);
 
-
-app.set('port', (process.env.PORT || 5000));
-app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (request, response) {
     response.send('Hello World!')
@@ -48,7 +39,7 @@ function genSitemap() {
                 // console.log(address);
                 var key = result.$(this).children("link").text();
                 var keyArr = key.split("/");
-                var url = "<url><loc>https://localhost:5000/scrapbox/" + keyArr[4]+"</loc></url>";
+                var url = "<url><loc>https://fast-castle-61290.herokuapp.com/scrapbox/" + keyArr[4]+"</loc></url>";
                 var tmp = {
                     [url]: {
                         lastmod: '2018-04-01',
@@ -59,7 +50,7 @@ function genSitemap() {
                 RSSArr.push(tmp);
                 map = map + url;
             });
-            map = map + "<url><loc>https://localhost:5000/</loc></url><url><loc>https://localhost:5000/sitemap.xml</loc></url><url><loc>https://localhost:5000/scrapbox/:title</loc></url></urlset>"
+            map = map + "<url><loc>https://fast-castle-61290.herokuapp.com/</loc></url><url><loc>https://fast-castle-61290.herokuapp.com/sitemap.xml</loc></url><url><loc>https://fast-castle-61290.herokuapp.com/scrapbox/:title</loc></url></urlset>"
             console.log(map);
             fs.writeFile("sitemap.xml", map, (err) => {
                 if (err) throw err;
@@ -114,13 +105,13 @@ genSitemap();
 //         })
 //         let result = {
 //             http: 'https',
-//             url: 'localhost:5000',
+//             url: 'fast-castle-61290.herokuapp.com',
 //             generate: app,
 //             route:RSSArr
 //         }
 //         const sitemap = map({
 //             http: 'https',
-//             url: 'localhost:5000',
+//             url: 'fast-castle-61290.herokuapp.com',
 //             map:mapArr,
 //             generate: app,
 //             route:RSSArr
