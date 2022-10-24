@@ -42,7 +42,7 @@ function genSitemap() {
                 var key = result.$(this).children("link").text();
                 var keyArr = key.split("/");
                 var lastMod = result.$(this).children("pubDate").text();
-                var url = "<url><loc>https://fast-castle-61290.herokuapp.com/scrapbox/" + keyArr[4]+"</loc><lastmod>" + lastMod + "</lastmod></url>";
+                var url = "<url><loc>https://yamato-scrapbox.herokuapp.com/scrapbox/" + keyArr[4]+"</loc><lastmod>" + lastMod + "</lastmod></url>";
                 var tmp = {
                     [url]: {
                         lastmod: '2018-04-01',
@@ -53,7 +53,7 @@ function genSitemap() {
                 RSSArr.push(tmp);
                 map = map + url;
             });
-            map = map + "<url><loc>https://fast-castle-61290.herokuapp.com/</loc></url><url><loc>https://fast-castle-61290.herokuapp.com/sitemap.xml</loc></url><url><loc>https://fast-castle-61290.herokuapp.com/scrapbox/:title</loc></url></urlset>"
+            map = map + "<url><loc>https://yamato-scrapbox.herokuapp.com/</loc></url><url><loc>https://yamato-scrapbox.herokuapp.com/sitemap.xml</loc></url><url><loc>https://yamato-scrapbox.herokuapp.com/scrapbox/:title</loc></url></urlset>"
             console.log(map);
             fs.writeFile("sitemap.xml", map, (err) => {
                 if (err) throw err;
