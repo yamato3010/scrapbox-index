@@ -41,7 +41,8 @@ function genSitemap() {
                 // console.log(address);
                 var key = result.$(this).children("link").text();
                 var keyArr = key.split("/");
-                var url = "<url><loc>https://fast-castle-61290.herokuapp.com/scrapbox/" + keyArr[4]+"</loc></url>";
+                var lastMod = result.$(this).children("lastBuildDate").text();
+                var url = "<url><loc>https://fast-castle-61290.herokuapp.com/scrapbox/" + keyArr[4]+"</loc><lastmod>" + lastMod + "</lastmod></url>";
                 var tmp = {
                     [url]: {
                         lastmod: '2018-04-01',
