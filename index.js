@@ -42,7 +42,10 @@ function genSitemap() {
                 var key = result.$(this).children("link").text();
                 var keyArr = key.split("/");
                 var lastMod = result.$(this).children("pubDate").text();
-                var url = "<sitemap><loc>https://yamato-scrapbox.herokuapp.com/scrapbox/" + keyArr[4]+"</loc><lastmod>" + lastMod + "</lastmod></sitemap>";
+                var y = lastMod.getFullYear();
+                var m = ('00' + (lastMod.getMonth()+1)).slice(-2);
+                var d = ('00' + lastMod.getDate()).slice(-2);
+                var url = "<sitemap><loc>https://yamato-scrapbox.herokuapp.com/scrapbox/" + keyArr[4]+"</loc><lastmod>" + y + '-' + m + '-' + d + "</lastmod></sitemap>";
                 var tmp = {
                     [url]: {
                         lastmod: '2018-04-01',
