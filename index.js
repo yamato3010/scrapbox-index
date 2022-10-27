@@ -30,7 +30,7 @@ app.listen(PORT=process.env.PORT || 3000, function () {
 
 function genSitemap() {
     var RSSArr = [];
-    var map = "<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">"
+    var map = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">"
     client.fetch(RSS, {})
         .then(function (result) {
             if (result.error) { console.log("error"); return; }
