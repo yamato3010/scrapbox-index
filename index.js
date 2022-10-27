@@ -42,9 +42,11 @@ function genSitemap() {
                 var key = result.$(this).children("link").text();
                 var keyArr = key.split("/");
                 var lastMod = result.$(this).children("pubDate").text();
-                var y = lastMod.getFullYear();
-                var m = ('00' + (lastMod.getMonth()+1)).slice(-2);
-                var d = ('00' + lastMod.getDate()).slice(-2);
+                var lastModDate = new Date(lastMod);
+                console.log(lastModDate);
+                var y = lastModDate.getFullYear();
+                var m = ('00' + (lastModDate.getMonth()+1)).slice(-2);
+                var d = ('00' + lastModDate.getDate()).slice(-2);
                 var url = "<sitemap><loc>https://yamato-scrapbox.herokuapp.com/scrapbox/" + keyArr[4]+"</loc><lastmod>" + y + '-' + m + '-' + d + "</lastmod></sitemap>";
                 var tmp = {
                     [url]: {
