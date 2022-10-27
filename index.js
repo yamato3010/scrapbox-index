@@ -58,7 +58,7 @@ function genSitemap() {
                 RSSArr.push(tmp);
                 map = map + url;
             });
-            map = map + "<sitemap><loc>https://yamato-scrapbox.herokuapp.com/</loc></sitemap><sitemap><loc>https://yamato-scrapbox.herokuapp.com/sitemap.xml</loc></sitemap><sitemap><loc>https://yamato-scrapbox.herokuapp.com/scrapbox/:title</loc></sitemap></sitemapindex>"
+            map = map + "<sitemap><loc>https://yamato-scrapbox.herokuapp.com/</loc><lastmod>2022-10-17</lastmod></sitemap></sitemapindex>"
             console.log(map);
             fs.writeFile("sitemap.xml", map, (err) => {
                 if (err) throw err;
