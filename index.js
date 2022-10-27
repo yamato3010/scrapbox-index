@@ -30,7 +30,7 @@ app.listen(PORT=process.env.PORT || 3000, function () {
 
 function genSitemap() {
     var RSSArr = [];
-    var map = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">"
+    var map = "<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">"
     client.fetch(RSS, {})
         .then(function (result) {
             if (result.error) { console.log("error"); return; }
@@ -42,7 +42,7 @@ function genSitemap() {
                 var key = result.$(this).children("link").text();
                 var keyArr = key.split("/");
                 var lastMod = result.$(this).children("pubDate").text();
-                var url = "<url><loc>https://yamato-scrapbox.herokuapp.com/scrapbox/" + keyArr[4]+"</loc><lastmod>" + lastMod + "</lastmod></url>";
+                var url = "<sitemap><loc>https://yamato-scrapbox.herokuapp.com/scrapbox/" + keyArr[4]+"</loc><lastmod>" + lastMod + "</lastmod></sitemap>";
                 var tmp = {
                     [url]: {
                         lastmod: '2018-04-01',
@@ -53,7 +53,7 @@ function genSitemap() {
                 RSSArr.push(tmp);
                 map = map + url;
             });
-            map = map + "<url><loc>https://yamato-scrapbox.herokuapp.com/</loc></url><url><loc>https://yamato-scrapbox.herokuapp.com/sitemap.xml</loc></url><url><loc>https://yamato-scrapbox.herokuapp.com/scrapbox/:title</loc></url></urlset>"
+            map = map + "<sitemap><loc>https://yamato-scrapbox.herokuapp.com/</loc></sitemap><sitemap><loc>https://yamato-scrapbox.herokuapp.com/sitemap.xml</loc></sitemap><sitemap><loc>https://yamato-scrapbox.herokuapp.com/scrapbox/:title</loc></sitemap></sitemapindex>"
             console.log(map);
             fs.writeFile("sitemap.xml", map, (err) => {
                 if (err) throw err;
