@@ -12,6 +12,7 @@
   "dependencies": {
     "cheerio-httpcli": "^0.8.3",
     "express": "^4.18.2",
+    "express-favicon": "^2.0.1",
     "express-sitemap": "^1.8.0",
     "feed": "^4.2.2",
     "fs": "0.0.1-security",

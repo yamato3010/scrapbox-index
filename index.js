@@ -2,8 +2,10 @@ var express = require('express');
 var app = express();
 let fs = require('fs');
 var client = require('cheerio-httpcli');
+const favicon = require('express-favicon');
 var RSS = "https://scrapbox.io/api/feed/yamato3010";
 
+app.use(favicon(__dirname + '/public/favicon.png'));
 
 app.get('/', function (request, response) {
     response.send('Hello World!')

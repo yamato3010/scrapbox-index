@@ -6,6 +6,7 @@ scrapboxはpublicのプロジェクトにしても、Googleにクロールされ
 
 - Node.js: 14.18.0
 - express: 4.18.2
+- Heroku
 
 ## 簡単な仕組みの解説
 
