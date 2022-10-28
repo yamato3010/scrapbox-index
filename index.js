@@ -16,6 +16,11 @@ app.get('/sitemap.xml', (req, res) => {
     res.send(fs.readFileSync(require('path').resolve(__dirname, './sitemap.xml'), "utf8"));
 });
 
+app.get('/sitemap_index.xml', (req, res) => {
+    res.set('Content-Type', 'text/xml');
+    res.send(fs.readFileSync(require('path').resolve(__dirname, './sitemap_index.xml'), "utf8"));
+});
+
 app.get("/scrapbox/:title", (req, res) => {
     console.log(req.params.title);
     // URLからscrapboxのタイトルを取得
