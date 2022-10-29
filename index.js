@@ -30,7 +30,6 @@ app.get("/scrapbox2/:title", (req, res) => {
 });
 
 app.get(/\/scrapbox\/(.+)/, (req, res) => {
-    logger.info('on /scrapbox req.params', req.params);
     // Get Scrapbox title
     const title = req.params[0];
     // Redirect to Scrapbox
