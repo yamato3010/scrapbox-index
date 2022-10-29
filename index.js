@@ -21,11 +21,19 @@ app.get('/sitemap_index.xml', (req, res) => {
     res.send(fs.readFileSync(require('path').resolve(__dirname, './sitemap_index.xml'), "utf8"));
 });
 
-app.get("/scrapbox/:title", (req, res) => {
+app.get("/scrapbox2/:title", (req, res) => {
     console.log(req.params.title);
     // URLからscrapboxのタイトルを取得
     const title = req.params.title;
     // scrapboxにリダイレクト
+    res.redirect(301, `https://scrapbox.io/yamato3010/${encodeURIComponent(title)}`);
+});
+
+app.get(/\/scrapbox\/(.+)/, (req, res) => {
+    logger.info('on /scrapbox req.params', req.params);
+    // Get Scrapbox title
+    const title = req.params[0];
+    // Redirect to Scrapbox
     res.redirect(301, `https://scrapbox.io/yamato3010/${encodeURIComponent(title)}`);
 });
 
