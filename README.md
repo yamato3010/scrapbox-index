@@ -1,12 +1,14 @@
 # scrapbox-index
 
-scrapboxはpublicのプロジェクトにしても、Googleにクロールされにくい（Search Consoleに登録できない）ので、それを何とか解消するためのもの。
+scrapboxはpublicのプロジェクトにしても、Googleにクロールされにくい（Search Consoleに登録できない）ので、それを何とか解消するためのもの。  
+試験段階なので効果があるかはまだわかりません。  
+何か進展があったらこちらに書き込みますが、[こちら](https://scrapbox.io/yamato3010/Scrapbox%E3%81%AE%E3%83%9A%E3%83%BC%E3%82%B8%E3%82%92%E6%A4%9C%E7%B4%A2%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E3%81%AB%E8%BC%89%E3%81%9B%E3%81%9F%E3%81%84)のほうが更新頻度高めです。
 
 ## 実行環境
 
 - Node.js: 14.18.0
 - express: 4.18.2
-- Heroku
+- Herokuでデプロイ
 
 ## 簡単な仕組みの解説
 
