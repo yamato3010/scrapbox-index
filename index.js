@@ -26,14 +26,14 @@ app.get("/scrapbox2/:title", (req, res) => {
     // URLからscrapboxのタイトルを取得
     const title = req.params.title;
     // scrapboxにリダイレクト
-    res.redirect(301, `https://scrapbox.io/yamato3010/${encodeURIComponent(title)}`);
+    res.redirect(301, `https://www.scrapbox.io/yamato3010/${encodeURIComponent(title)}`);
 });
 
 app.get(/\/scrapbox\/(.+)/, (req, res) => {
     // Get Scrapbox title
     const title = req.params[0];
     // Redirect to Scrapbox
-    res.redirect(301, `https://scrapbox.io/yamato3010/${encodeURIComponent(title)}`);
+    res.redirect(301, `https://www.scrapbox.io/yamato3010/${encodeURIComponent(title)}`);
 });
 
 app.use(express.static('public'));
