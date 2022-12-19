@@ -17,6 +17,8 @@ scrapboxはpublicのプロジェクトにしても、Googleにクロールされ
 にアクセスすると対応するscrapboxのページにリダイレクトされるようになっている
   - Googleからは、もともと`https://scrapbox-index.glitch.me`に存在したページが`https://https://scrapbox.io/yamato3010/`に移動したように見える
 - scrapboxのapiからrssフィードを取得し、そこからタイトルを抽出しサイトマップを作成している。
+  - `https://yamato-scrapbox.herokuapp.com/update`にアクセスすると、サイトマップを更新する関数が呼ばれる
+    - これをGoogleAppsScriptの定期実行することによって、サイトマップ更新を自動化している。 
   - これによりSearch Consoleがscrapboxの記事（正確には記事にリダイレクトするダミーのページ）をクロールしやすくなる（はず）
 
 ## 参考
