@@ -21,7 +21,7 @@ function genSitemap() {
                 var y = lastModDate.getFullYear();
                 var m = ('00' + (lastModDate.getMonth()+1)).slice(-2);
                 var d = ('00' + lastModDate.getDate()).slice(-2);
-                var url = "<url><loc>https://yamato-scrapbox.herokuapp.com/scrapbox/" + keyArr[4]+"</loc><lastmod>" + y + '-' + m + '-' + d + "</lastmod></url>";
+                var url = "<url><loc>https://scrapbox-index.glitch.me/scrapbox/" + keyArr[4]+"</loc><lastmod>" + y + '-' + m + '-' + d + "</lastmod></url>";
 
                 // var url = "<url><loc>https://fast-castle-61290.herokuapp.com/scrapbox/" + keyArr[4]+"</loc><lastmod>" + lastMod + "</lastmod></url>";
                 var tmp = {
@@ -35,7 +35,7 @@ function genSitemap() {
                 RSSArr.push(tmp);
                 map = map + url;
             });
-            map = map + "<url><loc>https://fast-castle-61290.herokuapp.com/</loc></url><url><loc>https://fast-castle-61290.herokuapp.com/sitemap.xml</loc></url><url><loc>https://fast-castle-61290.herokuapp.com/scrapbox/:title</loc></url></urlset>"
+            map = map + "<url><loc>https://scrapbox-index.glitch.me/</loc></url><url><loc>https://scrapbox-index.glitch.me/sitemap.xml</loc></url><url><loc>https://scrapbox-index.glitch.me/scrapbox/:title</loc></url></urlset>"
             // console.log(map);
             fs.writeFile("sitemap.xml", map, (err) => {
                 if (err) throw err;
