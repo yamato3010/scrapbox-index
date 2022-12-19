@@ -8,13 +8,14 @@ scrapboxはpublicのプロジェクトにしても、Googleにクロールされ
 
 - Node.js: 14.18.0
 - express: 4.18.2
-- Herokuでデプロイ
+- ~~Herokuでデプロイ~~
+  - Heroku無料プラン廃止により、Glitchへ移行
 
 ## 簡単な仕組みの解説
 
-- <https://yamato-scrapbox.herokuapp.com/scrapbox/>`{scrapboxのタイトル}`
+- <https://scrapbox-index.glitch.me/scrapbox/>`{scrapboxのタイトル}`
 にアクセスすると対応するscrapboxのページにリダイレクトされるようになっている
-  - Googleからは、もともと`https://yamato-scrapbox.herokuapp.com/`に存在したページが`https://https://scrapbox.io/yamato3010/`に移動したように見える
+  - Googleからは、もともと`https://scrapbox-index.glitch.me`に存在したページが`https://https://scrapbox.io/yamato3010/`に移動したように見える
 - scrapboxのapiからrssフィードを取得し、そこからタイトルを抽出しサイトマップを作成している。
   - これによりSearch Consoleがscrapboxの記事（正確には記事にリダイレクトするダミーのページ）をクロールしやすくなる（はず）
 
